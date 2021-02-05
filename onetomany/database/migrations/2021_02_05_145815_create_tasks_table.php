@@ -15,6 +15,14 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+
+            $table->string('title', 50);
+            $table->string('description', 300);
+            $table->tinyInteger('priority');
+
+            // foreign key - each task associated to an employee
+            $table->bigInteger('employee_id') -> unsigned();	
+
             $table->timestamps();
         });
     }

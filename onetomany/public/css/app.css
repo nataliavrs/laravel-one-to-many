@@ -1,0 +1,63 @@
+/* 
+#############
+GENERAL
+############
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Nunito";
+}
+
+/* 
+#############
+HEADER
+############
+*/
+
+/* 
+#############
+INDEX
+############
+*/
+
+.index-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.index-content ul {
+  list-style: none;
+}
+
+/* 
+#############
+FOOTER
+############
+*/
+
+/* 
+#############
+COMBINED
+############
+*/
+
+footer,
+header {
+  background-color: grey;
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+

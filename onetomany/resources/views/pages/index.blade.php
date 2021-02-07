@@ -4,7 +4,7 @@
 
     <main class="index-content">
 
-        <h2>Employees</h2>
+        <h1>Employees</h1>
 
         @foreach ($emps as $emp)
             <ul>

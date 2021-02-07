@@ -9,8 +9,9 @@ GENERAL
     box-sizing: border-box;
 }
 
-body {
-    background-color: rgb(221, 78, 62);
+body {    
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
     color: white;
     font-family: 'Poppins', sans-serif;
     ul {
@@ -40,13 +41,18 @@ CONTENT
     align-items: center;
     flex-direction: column;
     height: 80vh;
-
+    h1 {        
+        // background-color: #03bdc0;
+        // border-radius: 10px;
+        // padding: 2px;
+        text-transform: uppercase;
+    }
     ul {        
         li > a {
             text-decoration: none;
-            color: black;
+            color: white;
             &:hover {
-                color: white;
+                color: black;
             }            
         }
     }
@@ -59,7 +65,42 @@ CONTENT
     align-items: center;
     flex-direction: column;
     height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
+}
 
+// CREATE NEW TASK PAGE
+.create-task-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
+}
+
+// UPDATE (EDIT) TASK PAGE
+.update-task-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
     ul {        
         li > a {
             text-decoration: none;
@@ -77,6 +118,12 @@ FOOTER
 ############
 */
 
+footer {
+    h5 {
+        font-weight: normal;
+    }                
+}
+
 /* 
 #############
 COMBINED
@@ -84,14 +131,21 @@ COMBINED
 */
 
 footer, header {
-    background-color: rgb(43, 39, 39);
+    background-color: rgba(5, 5, 5, 0.233);
     display: flex;
     height: 10vh;
     justify-content: center;
     align-items: center;
+    // color:#03bdc0;
+    color: white;
     ul {
-        li > a {
-            color: lightgrey;
+        li {
+            display: inline-block;
+            a {
+                // color:#03bdc0;
+                color: white;
+                display: inline-block;
+            }
         }
     }
 }

@@ -8,7 +8,9 @@
 
         @foreach ($emps as $emp)
             <ul>
-                <li>{{$emp -> name}} {{$emp -> lastname}}</li>
+                <li>
+                 <a href="{{route('emp-show', $emp -> id)}}">{{$emp -> name}} {{$emp -> lastname}}</a>   
+                </li>                
             </ul>
         @endforeach    
 

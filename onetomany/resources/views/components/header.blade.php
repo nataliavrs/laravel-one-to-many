@@ -1,5 +1,7 @@
 <header>
-
-    <h4>header</h4>
-
+    <ul>
+        <li>
+            <a href="{{route('index')}}">Home</a>
+        </li>
+    </ul>
 </header>

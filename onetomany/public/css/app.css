@@ -11,9 +11,17 @@ GENERAL
 }
 
 body {
-  background-color: black;
+  background-color: #dd4e3e;
   color: white;
-  font-family: "Nunito";
+  font-family: "Poppins", sans-serif;
+}
+
+body ul {
+  list-style: none;
+}
+
+body ul li > a {
+  text-decoration: none;
 }
 
 /* 
@@ -24,7 +32,7 @@ HEADER
 
 /* 
 #############
-INDEX
+CONTENT
 ############
 */
 
@@ -36,8 +44,30 @@ INDEX
   height: 80vh;
 }
 
-.index-content ul {
-  list-style: none;
+.index-content ul li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.index-content ul li > a:hover {
+  color: white;
+}
+
+.emp-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.emp-content ul li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.emp-content ul li > a:hover {
+  color: white;
 }
 
 /* 
@@ -54,10 +84,15 @@ COMBINED
 
 footer,
 header {
-  background-color: grey;
+  background-color: #2b2727;
   display: flex;
   height: 10vh;
   justify-content: center;
   align-items: center;
+}
+
+footer ul li > a,
+header ul li > a {
+  color: lightgrey;
 }
 

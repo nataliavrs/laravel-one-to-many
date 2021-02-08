@@ -17,3 +17,10 @@ Route::post('/task/store', 'MainController@taskStore')
 // update (edit) task
 Route::get('/update-task/{id}', 'MainController@taskUpdate')
     -> name('update-task');
+// location index
+Route::get('/index-location', 'MainController@indexLocation')
+    -> name('index-location');
+// location show
+Route::get('/show-location/{id}', 'MainController@showLocation')
+    -> name('show-location');
+

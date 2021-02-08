@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use App\Task;
+use App\Location;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -42,4 +43,15 @@ class MainController extends Controller
         
         return view('pages.update-task', compact(['task', 'emps']));
     }
+    // locations index
+    public function indexLocation() {
+        $locations = Location::all();        
+        return view('pages.loc-index', compact(['locations']));
+    }
+    // locations show
+    public function showLocation($id) {
+        $location = Location::findOrFail($id);        
+        return view('pages.loc-show', compact(['location']));
+    }
+    
 }

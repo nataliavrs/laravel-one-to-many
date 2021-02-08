@@ -31,6 +31,10 @@ HEADER
 ############
 */
 
+header ul li {
+  margin: 10px;
+}
+
 /* 
 #############
 CONTENT
@@ -106,6 +110,40 @@ CONTENT
 }
 
 .update-task-content ul li > a:hover {
+  color: white;
+}
+
+.loc-index-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.loc-index-content ul li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.loc-index-content ul li > a:hover {
+  color: white;
+}
+
+.loc-show-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.loc-show-content ul li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.loc-show-content ul li > a:hover {
   color: white;
 }
 

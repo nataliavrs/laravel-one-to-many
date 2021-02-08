@@ -19,5 +19,13 @@
             @endforeach
         </ul>
 
+        <h3>Locations</h3>
+        <ul>
+            @foreach ($emp -> locations as $location)            
+                        <li>Name: {{ $location -> name }}</li>
+                        <li>Coordinates: {{ $location -> coords }}</li>                                                
+            @endforeach
+        </ul>
+
     </main>
     @endsection

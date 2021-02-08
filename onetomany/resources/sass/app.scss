@@ -27,6 +27,13 @@ body {
 HEADER
 ############
 */
+header {
+    ul {
+        li {
+            margin: 10px;
+        }
+    }
+}
 
 /* 
 #############
@@ -96,6 +103,42 @@ CONTENT
 
 // UPDATE (EDIT) TASK PAGE
 .update-task-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
+}
+
+// LOCATION INDEX CONTENT
+.loc-index-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
+}
+
+// LOCATION SHOW 
+.loc-show-content {
     display: flex;
     justify-content: center;
     align-items: center;

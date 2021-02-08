@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeys extends Migration
+class CreateEmployeeLocationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class AddForeignKeys extends Migration
      */
     public function up()
     {
-        Schema::table('tasks', function(Blueprint $table){
+        Schema::create('employee_location', function (Blueprint $table) {
+            $table->id();
 
-            $table -> foreign('employee_id', 'employee_task')
-            -> references('id')
-            -> on('employees');
+            $table->bigInteger('employee_id') -> unsigned();
+            $table->bigInteger('location_id') -> unsigned();
 
+            $table->timestamps();
         });
     }
 
@@ -29,10 +30,6 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
-        Schema::table('tasks', function(Blueprint $table){
-
-            $table -> dropForeign('employee_task');
-                        
-        });
+        Schema::dropIfExists('employee_location');
     }
 }

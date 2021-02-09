@@ -36,12 +36,23 @@ class MainController extends Controller
         return redirect() -> route('index');
         // dd($newTask);
     }
-    // update (edit) task
-    public function taskUpdate($id) {
+    // update (edit) task page
+    public function taskUpdatePage($id) {
         $emps = Employee::all();
         $task = Task::findOrFail($id);
         
         return view('pages.update-task', compact(['task', 'emps']));
+    }
+    // update (edit) task
+    public function taskUpdate(Request $request, $id) {
+        
+        $data = $request -> all();
+
+        // $emps = Employee::all();
+        $task = Task::findOrFail($id);
+        $task -> update($data);
+        
+        return redirect() -> route('index');
     }
     // locations index
     public function indexLocation() {

@@ -14,7 +14,7 @@
                         <li>Title: {{ $task -> title }}</li>
                         <li>Priority: {{ $task -> priority }}</li>
                         <li>Description: {{ $task -> description }}</li>                       
-                        <li><a href="{{route('update-task', $task -> id)}}">EDIT</a></li>                                                 
+                        <li><a href="{{route('update-task-page', $task -> id)}}">EDIT</a></li>                                                 
                         {{-- (I belong to {{ $task -> employee -> name }}) --}}
             @endforeach
         </ul>

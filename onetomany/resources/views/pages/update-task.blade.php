@@ -4,9 +4,11 @@
 
     <div class="update-task-content">
         <h3>{{$task -> id}}</h3>
-        <form action="{{ route('store-task') }}" method="POST">
+
+        <form action="{{ route('update-task', $task -> id) }}" method="POST">
             @csrf
             @method('POST')
+            
             <label for="title">Title</label>
             <input name="title" type="text" value="{{ $task -> title }}">
             <br>
@@ -29,6 +31,7 @@
             <br>
             <input type="submit" value="Edit task">
         </form> 
+
     </div>
     
 @endsection

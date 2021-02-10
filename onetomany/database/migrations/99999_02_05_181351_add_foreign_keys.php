@@ -12,7 +12,8 @@ class AddForeignKeys extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+        // ONE TO MANY TASKS AND EMPLOYEES
         Schema::table('tasks', function(Blueprint $table){
 
             $table -> foreign('employee_id', 'employee_task')
@@ -21,6 +22,7 @@ class AddForeignKeys extends Migration
 
         });
 
+        // MANY TO MANY EMPLOYEES AND LOCATIONS
         Schema::table('employee_location', function(Blueprint $table){
 
             $table -> foreign('employee_id', 'el-employee')
@@ -33,6 +35,18 @@ class AddForeignKeys extends Migration
 
         });
 
+        // MANY TO MANY TASKS AND TYPOLOGIES
+        Schema::table('task_typology', function(Blueprint $table){
+
+            $table -> foreign('task_id', 'fk_task')
+            -> references('id')
+            -> on('tasks');
+
+            $table -> foreign('typology_id', 'fk-typology')
+            -> references('id')
+            -> on('typologies');
+
+        });
 
     }
 
@@ -44,6 +58,13 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {   
+        Schema::table('task_typology', function(Blueprint $table){
+
+            $table -> dropForeign('fk-typology');
+            $table -> dropForeign('fk_task');
+                        
+        });
+
         Schema::table('employee_location', function(Blueprint $table){
 
             $table -> dropForeign('el-location');

@@ -38,7 +38,7 @@ class MainController extends Controller
     }
     // update (edit) task page
     public function taskUpdatePage($id) {
-        $emps = Employee::all();
+        $emps = Employee::all(); // model prende i dati dal DB, dopo nel controller chiamo il model e dopo ci lavoro
         $task = Task::findOrFail($id);
         
         return view('pages.update-task', compact(['task', 'emps']));
@@ -48,7 +48,6 @@ class MainController extends Controller
         
         $data = $request -> all();
 
-        // $emps = Employee::all();
         $task = Task::findOrFail($id);
         $task -> update($data);
         

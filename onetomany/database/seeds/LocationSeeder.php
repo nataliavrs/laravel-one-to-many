@@ -15,11 +15,13 @@ class LocationSeeder extends Seeder
     {
         factory(Location::class, 10)
         -> create()
-        -> each(function($loc) {
+        -> each(function($loc) { //$loc = Location::findOrFail(XX)
 
             $emps = Employee::inRandomOrder()
-                -> limit(5) -> get();
-            $loc -> employees() -> attach($emps);
+                -> limit(5) -> get(); // versione di all con i filtri
+            
+            $loc -> employees() -> attach($emps); // inserire e associare uno 
+            // o piu employees
 
         });
     }

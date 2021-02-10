@@ -23,7 +23,7 @@
                 @foreach ($emps as $emp)
                     <option value="{{ $emp -> id }}" 
                         @if ($task -> employee -> id == $emp -> id)
-                            selected
+                        selected
                         @endif
                     >{{ $emp -> name }}</option>
                 @endforeach

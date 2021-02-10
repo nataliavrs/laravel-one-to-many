@@ -17,7 +17,7 @@ Route::post('/task/store', 'MainController@taskStore')
 // update (edit) task page
 Route::get('/update-task/{id}', 'MainController@taskUpdatePage')
     -> name('update-task-page');
-Route::post('/update-task/update/{id}', 'MainController@taskUpdate')
+Route::post('/update-task/{id}', 'MainController@taskUpdate')
 -> name('update-task');
 // location index
 Route::get('/index-location', 'MainController@indexLocation')

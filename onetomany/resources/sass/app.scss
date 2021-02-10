@@ -155,6 +155,42 @@ CONTENT
     }
 }
 
+// LOCATION INDEX CONTENT
+.typ-index-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
+}
+
+// LOCATION SHOW 
+.typ-show-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
+}
+
 /* 
 #############
 FOOTER

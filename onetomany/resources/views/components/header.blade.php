@@ -9,6 +9,9 @@
         <li>
             <a href="{{route('index-location')}}">Locations</a>
         </li>    
+        <li>
+            <a href="{{route('index-typology')}}">Typologies</a>
+        </li>   
                 
     </ul>
 </header>

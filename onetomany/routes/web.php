@@ -25,4 +25,10 @@ Route::get('/index-location', 'MainController@indexLocation')
 // location show
 Route::get('/show-location/{id}', 'MainController@showLocation')
     -> name('show-location');
+// typology index
+Route::get('/index-typology', 'MainController@indexTypology')
+    -> name('index-typology');
+// typology show
+Route::get('/index-typology/show-typology/{id}', 'MainController@showTypology')
+    -> name('show-typology');
 

@@ -147,6 +147,40 @@ CONTENT
   color: white;
 }
 
+.typ-index-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.typ-index-content ul li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.typ-index-content ul li > a:hover {
+  color: white;
+}
+
+.typ-show-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.typ-show-content ul li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.typ-show-content ul li > a:hover {
+  color: white;
+}
+
 /* 
 #############
 FOOTER

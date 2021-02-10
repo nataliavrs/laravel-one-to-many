@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Typology::class, function (Faker $faker) {
     return [
-        'name' => $faker -> firstName,
+        'name' => $faker -> word,
         'description' => $faker -> sentence
     ];
 });

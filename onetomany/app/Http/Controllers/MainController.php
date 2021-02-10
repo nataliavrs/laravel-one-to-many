@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Employee;
 use App\Task;
 use App\Location;
+use App\Typology;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -32,7 +33,6 @@ class MainController extends Controller
         $emp = Employee::findOrFail($request -> get('emp_id'));
         $newTask -> employee() -> associate($emp);
         $newTask -> save();
-        
         return redirect() -> route('index');
         // dd($newTask);
     }
@@ -40,17 +40,13 @@ class MainController extends Controller
     public function taskUpdatePage($id) {
         $emps = Employee::all(); // model prende i dati dal DB, dopo nel controller chiamo il model e dopo ci lavoro
         $task = Task::findOrFail($id);
-        
         return view('pages.update-task', compact(['task', 'emps']));
     }
     // update (edit) task
     public function taskUpdate(Request $request, $id) {
-        
         $data = $request -> all();
-
         $task = Task::findOrFail($id);
         $task -> update($data);
-        
         return redirect() -> route('index');
     }
     // locations index
@@ -63,5 +59,14 @@ class MainController extends Controller
         $location = Location::findOrFail($id);        
         return view('pages.loc-show', compact(['location']));
     }
-    
+    // typologies index
+    public function indexTypology() {
+        $typologies = Typology::all();        
+        return view('pages.typ-index', compact(['typologies']));
+    }
+    // typologies show
+    public function showTypology($id) {
+        $typology = Typology::findOrFail($id);        
+        return view('pages.typ-show', compact(['typology']));
+    }
 }

@@ -20,7 +20,7 @@ class TypologySeeder extends Seeder
                 $tasks = Task::inRandomOrder()
                     -> limit(3) -> get();
                 
-                $typology -> employees() -> attach($tasks);
+                $typology -> tasks() -> attach($tasks);
 
             });
     }

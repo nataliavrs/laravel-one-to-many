@@ -215,6 +215,23 @@ CONTENT
   color: white;
 }
 
+.create-typo-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.create-typo-content ul li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.create-typo-content ul li > a:hover {
+  color: white;
+}
+
 /* 
 #############
 FOOTER

@@ -9,11 +9,11 @@
 
         <ul>
             <h2>Tasks with this typology:</h2>
-            
+
             @foreach ($typology -> tasks as $task)             
             <li>Task: {{$task -> title}}</li>                                                                                            
             <li>Employee given this task: {{$task -> employee -> name}}</li>                                                                                            
-                        
+
             <hr>        
             @endforeach
 

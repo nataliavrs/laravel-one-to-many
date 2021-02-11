@@ -12,7 +12,7 @@
             <label for="title">Title</label>
             <input name="title" type="text" value="{{ $task -> title }}">
             <br>
-            <label for="priority">Weight</label>
+            <label for="priority">Priority</label>
             <input name="priority" type="text" value="{{ $task -> priority }}">
             <br>
             <label for="description">Description</label>

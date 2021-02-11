@@ -59,10 +59,14 @@ class MainController extends Controller
         $data = $request -> all();
         $task = Task::findOrFail($id);
         $task -> update($data);
-        return redirect() -> route('index-task');
+        
+        // parametri passati con array
+        // redirect aggiorna url 
+        return redirect() -> route('show-task', ['id' => $id]);
+        // return redirect() -> route('show-task', ['id' => $id, 'altra' => $altra]);
 
-        // #### TO-DO: REDIRECT TO EDITED TASK
-        // return redirect() -> route('show-task');
+        // non aggiorna URL
+        // return view('pages.task-show', compact(['task', 'id']));
     }
 
     // ##### LOCATIONS #####
@@ -88,4 +92,23 @@ class MainController extends Controller
         $typology = Typology::findOrFail($id);        
         return view('pages.typ-show', compact(['typology']));
     }
+    // typology create page
+    public function typologyCreate() {
+        $tasks = Task::all();
+        return view('pages.create-typology', compact(['tasks']));
+    }
+    // store typology 
+    public function typologyStore(Request $request) {
+        $data = $request -> all();
+        // dd($data);
+
+        $typology = Typology::make($request -> all());
+        $typology -> save();
+
+        $tasks = Task::findOrFail($data['tasks']);
+        $typology -> tasks() -> attach($tasks); 
+
+        return redirect() -> route('index-typology');
+    }
+
 }

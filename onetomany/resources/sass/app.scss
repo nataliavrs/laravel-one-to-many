@@ -209,6 +209,7 @@ CONTENT
     }
 }
 
+// TASK SHOW 
 .task-show-content {
     display: flex;
     justify-content: center;
@@ -225,6 +226,25 @@ CONTENT
         }
     }
     
+}
+
+
+// TYPOLOGY CREATE PAGE 
+.create-typo-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
 }
 
 /* 

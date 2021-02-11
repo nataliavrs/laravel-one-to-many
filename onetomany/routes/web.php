@@ -22,11 +22,17 @@ Route::get('/index-typology', 'MainController@indexTypology')
 // typology show
 Route::get('/index-typology/show-typology/{id}', 'MainController@showTypology')
     -> name('show-typology');
+// page - create new typology
+Route::get('/create-typology', 'MainController@typologyCreate')
+    -> name('create-typology');
+// create new typology (store)
+Route::post('/typology/create', 'MainController@typologyStore') 
+    -> name('store-typology'); 
 
-// task index
+// page - task index
 Route::get('/index-task', 'MainController@indexTask')
     -> name('index-task');
-// page - show
+// page - task show
 Route::get('/index-task/task/{id}', 'MainController@showTask')
     -> name('show-task');
 // page - create new task
@@ -40,3 +46,4 @@ Route::get('/update-task/{id}', 'MainController@taskUpdatePage')
     -> name('update-task-page');
 Route::post('/update-task/{id}', 'MainController@taskUpdate')
 -> name('update-task');    
+

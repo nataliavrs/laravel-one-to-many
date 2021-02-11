@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration
             $table->id();
 
             $table->string('title', 50);
-            $table->string('description', 300);
+            $table->string('description', 2000);
             $table->tinyInteger('priority');
 
             // foreign key - each task associated to an employee

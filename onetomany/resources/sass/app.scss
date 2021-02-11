@@ -191,6 +191,42 @@ CONTENT
     }
 }
 
+// TASKS INDEX CONTENT
+.task-index-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
+}
+
+.task-show-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    ul {        
+        li > a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: white;
+            }            
+        }
+    }
+    
+}
+
 /* 
 #############
 FOOTER
@@ -228,4 +264,3 @@ footer, header {
         }
     }
 }
-

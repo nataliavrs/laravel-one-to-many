@@ -13,7 +13,7 @@ class TypologySeeder extends Seeder
      */
     public function run()
     {
-        factory(Typology::class, 10)
+        factory(Typology::class, 5)
             -> create()
             -> each(function($typology) {
 

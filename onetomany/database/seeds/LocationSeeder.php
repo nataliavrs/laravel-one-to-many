@@ -13,7 +13,7 @@ class LocationSeeder extends Seeder
      */
     public function run()
     {
-        factory(Location::class, 10)
+        factory(Location::class, 5)
         -> create()
         -> each(function($loc) { //$loc = Location::findOrFail(XX)
 

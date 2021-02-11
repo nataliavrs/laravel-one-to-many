@@ -20,6 +20,18 @@ class MainController extends Controller
         $emp = Employee::findOrFail($id);
         return view('pages.emp-show', compact(['emp']));
     }
+
+    // ##### TASKS #####
+    // page - index
+    public function indexTask() {
+        $tasks = Task::all();
+        return view('pages.task-index', compact('tasks'));
+    }
+    // page - show
+    public function showTask($id) {
+        $task = Task::findOrFail($id);
+        return view('pages.task-show', compact('task'));
+    }
     // page - create task form
     public function taskCreate(){
         // return emps array to have in select
@@ -36,7 +48,7 @@ class MainController extends Controller
         return redirect() -> route('index');
         // dd($newTask);
     }
-    // update (edit) task page
+    // page - update (edit) task 
     public function taskUpdatePage($id) {
         $emps = Employee::all(); // model prende i dati dal DB, dopo nel controller chiamo il model e dopo ci lavoro
         $task = Task::findOrFail($id);
@@ -47,8 +59,13 @@ class MainController extends Controller
         $data = $request -> all();
         $task = Task::findOrFail($id);
         $task -> update($data);
-        return redirect() -> route('index');
+        return redirect() -> route('index-task');
+
+        // #### TO-DO: REDIRECT TO EDITED TASK
+        // return redirect() -> route('show-task');
     }
+
+    // ##### LOCATIONS #####
     // locations index
     public function indexLocation() {
         $locations = Location::all();        
@@ -59,6 +76,8 @@ class MainController extends Controller
         $location = Location::findOrFail($id);        
         return view('pages.loc-show', compact(['location']));
     }
+
+    // ##### TYPOLOGIES #####
     // typologies index
     public function indexTypology() {
         $typologies = Typology::all();        

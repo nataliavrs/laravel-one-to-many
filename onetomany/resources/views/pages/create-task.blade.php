@@ -16,7 +16,8 @@
             <input name="priority" type="text">
 
             <label for="">Description:</label>
-            <input name="description" type="text">
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
+            {{-- <input name="description" type="text" id="input-eric"> --}}
 
             <label for="emp_id">Employee:</label>
             <select name="emp_id">

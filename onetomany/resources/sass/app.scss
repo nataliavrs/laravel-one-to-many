@@ -59,189 +59,43 @@ CONTENT
             text-decoration: none;
             color: white;
             &:hover {
-                color: black;
+                color: #19bfe9;
             }            
         }
     }
 }
 
-// EMP-SHOW PAGE
-.emp-content {
+.update-typo-content, 
+.create-typo-content, 
+.task-show-content, 
+.task-index-content,
+.typ-show-content,
+.typ-index-content,
+.loc-show-content,
+.loc-index-content,
+.update-task-content,
+.create-task-content,
+.emp-content  {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 80vh;
-    ul {        
-        li > a {
+    h2 {
+        a {
             text-decoration: none;
-            color: black;
+            color: white;
             &:hover {
-                color: white;
-            }            
+                color: #19bfe9;
+            } 
         }
     }
-}
-
-// CREATE NEW TASK PAGE
-.create-task-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
     ul {        
         li > a {
             text-decoration: none;
-            color: black;
+            color: white;
             &:hover {
-                color: white;
-            }            
-        }
-    }
-}
-
-// UPDATE (EDIT) TASK PAGE
-.update-task-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: white;
-            }            
-        }
-    }
-}
-
-// LOCATION INDEX CONTENT
-.loc-index-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: white;
-            }            
-        }
-    }
-}
-
-// LOCATION SHOW 
-.loc-show-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: white;
-            }            
-        }
-    }
-}
-
-// LOCATION INDEX CONTENT
-.typ-index-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: white;
-            }            
-        }
-    }
-}
-
-// LOCATION SHOW 
-.typ-show-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: white;
-            }            
-        }
-    }
-}
-
-// TASKS INDEX CONTENT
-.task-index-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: white;
-            }            
-        }
-    }
-}
-
-// TASK SHOW 
-.task-show-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: white;
-            }            
-        }
-    }
-    
-}
-
-
-// TYPOLOGY CREATE PAGE 
-.create-typo-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: white;
+                color: #19bfe9;
             }            
         }
     }
@@ -271,13 +125,11 @@ footer, header {
     height: 10vh;
     justify-content: center;
     align-items: center;
-    // color:#03bdc0;
     color: white;
     ul {
         li {
             display: inline-block;
             a {
-                // color:#03bdc0;
                 color: white;
                 display: inline-block;
             }

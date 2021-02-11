@@ -28,6 +28,12 @@ Route::get('/create-typology', 'MainController@typologyCreate')
 // create new typology (store)
 Route::post('/typology/create', 'MainController@typologyStore') 
     -> name('store-typology'); 
+// page - typology update 
+Route::get('/typology/update-page/{id}', 'MainController@typologyUpdatePage') 
+    -> name('update-typology-page'); 
+// typology update 
+Route::post('/typology/update-page/update/{id}', 'MainController@typologyUpdate') 
+-> name('update-typology'); 
 
 // page - task index
 Route::get('/index-task', 'MainController@indexTask')

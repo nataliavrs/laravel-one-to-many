@@ -110,5 +110,28 @@ class MainController extends Controller
 
         return redirect() -> route('index-typology');
     }
+    // edit (update) typology page
+    public function typologyUpdatePage($id) {
+
+        $typology = Typology::findOrFail($id);
+        $tasks = Task::all();
+
+        return view('pages.update-typology', compact(['typology', 'tasks']));
+    }
+    // update typology
+    public function typologyUpdate(Request $request, $id) {
+
+        $data = $request -> all();
+        // dd($data);
+            
+        $typology = Typology::findOrFail($id);
+        $typology -> update($data);
+        $typology -> save();
+
+        $tasks = Task::findOrFail($data['tasks']);
+        $typology -> tasks() -> sync($tasks);
+
+        return redirect() -> route('show-typology', ['id' => $id]);
+    }
 
 }

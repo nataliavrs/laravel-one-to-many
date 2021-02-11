@@ -16,7 +16,7 @@
 
             <hr>        
             @endforeach
-
+            <h2><a href="{{route('update-typology-page', $typology -> id)}}">Edit typology</a></h2>
 
         </ul>
 

@@ -6,6 +6,7 @@ use App\Employee;
 use App\Task;
 use App\Location;
 use App\Typology;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -40,12 +41,19 @@ class MainController extends Controller
     }
     // create new task
     public function taskStore(Request $request){
-        // dd($request -> all());
+        $data = $request -> all();
+        
+        Validator::make($data, [
+            'title' => 'required|min:5',
+            'priority' => 'required',
+            'description' => 'required|min:10|max:200',
+        ])->validate();
+        
         $newTask = Task::make($request -> all());
         $emp = Employee::findOrFail($request -> get('emp_id'));
         $newTask -> employee() -> associate($emp);
         $newTask -> save();
-        return redirect() -> route('index');
+        return redirect() -> route('index-task');
         // dd($newTask);
     }
     // page - update (edit) task 
@@ -54,20 +62,53 @@ class MainController extends Controller
         $task = Task::findOrFail($id);
         return view('pages.update-task', compact(['task', 'emps']));
     }
-    // update (edit) task
-    public function taskUpdate(Request $request, $id) {
-        $data = $request -> all();
-        $task = Task::findOrFail($id);
-        $task -> update($data);
-        
-        // parametri passati con array
-        // redirect aggiorna url 
-        return redirect() -> route('show-task', ['id' => $id]);
-        // return redirect() -> route('show-task', ['id' => $id, 'altra' => $altra]);
 
-        // non aggiorna URL
-        // return view('pages.task-show', compact(['task', 'id']));
-    }
+    // ##### UPDATE (EDIT) TASK USING VALIDATOR DEFAULT ERROR MESSAGES
+
+    // public function taskUpdate(Request $request, $id) {
+    //     $data = $request -> all();
+
+    //     Validator::make($data, [
+    //         'title' => 'required|min:5',
+    //         'priority' => 'required',
+    //         'description' => 'required|min:10|max:1000',
+    //     ])->validate();
+
+    //     $task = Task::findOrFail($id);
+    //     $task -> update($data);
+        
+    //     // parametri passati con array
+    //     // redirect aggiorna url 
+    //     return redirect() -> route('show-task', ['id' => $id]);
+    //     // return redirect() -> route('show-task', ['id' => $id, 'altra' => $altra]);
+
+    //     // non aggiorna URL
+    //     // return view('pages.task-show', compact(['task', 'id']));
+    // }
+
+
+    // ##### UPDATE (EDIT) TASK USING VALIDATOR CUSTOM ERROR MESSAGES
+
+    // public function taskUpdate(Request $request, $id) {
+    //     $data = $request -> all();
+
+    //     Validator::make($data, [
+    //         'title' => 'required|min:5',
+    //         'priority' => 'required',
+    //         'description' => 'required|min:10|max:1000',
+    //     ])->validate();
+
+    //     $task = Task::findOrFail($id);
+    //     $task -> update($data);
+        
+    //     // parametri passati con array
+    //     // redirect aggiorna url 
+    //     return redirect() -> route('show-task', ['id' => $id]);
+    //     // return redirect() -> route('show-task', ['id' => $id, 'altra' => $altra]);
+
+    //     // non aggiorna URL
+    //     // return view('pages.task-show', compact(['task', 'id']));
+    // }
 
     // ##### LOCATIONS #####
     // locations index
@@ -97,15 +138,24 @@ class MainController extends Controller
         $tasks = Task::all();
         return view('pages.create-typology', compact(['tasks']));
     }
-    // store typology 
+    // store (create) typology 
     public function typologyStore(Request $request) {
         $data = $request -> all();
         // dd($data);
 
+        Validator::make($data, [
+            'name' => 'required|min:5',
+            'description' => 'required|min:10',
+        ])->validate();
+        
         $typology = Typology::make($request -> all());
         $typology -> save();
-
-        $tasks = Task::findOrFail($data['tasks']);
+        
+        if (array_key_exists('tasks', $data)) {
+            $tasks = Task::findOrFail($data['tasks']);
+        } else {
+            $tasks = [];
+        }
         $typology -> tasks() -> attach($tasks); 
 
         return redirect() -> route('index-typology');
@@ -123,15 +173,26 @@ class MainController extends Controller
 
         $data = $request -> all();
         // dd($data);
+        
+        Validator::make($data, [
+            'name' => 'required|min:5',
+            'description' => 'required|min:10',
+        ])->validate();
             
         $typology = Typology::findOrFail($id);
         $typology -> update($data);
         $typology -> save();
 
-        $tasks = Task::findOrFail($data['tasks']);
+        if (array_key_exists('tasks', $data)) {
+            $tasks = Task::findOrFail($data['tasks']);
+        } else {
+            $tasks = [];
+        }
+
         $typology -> tasks() -> sync($tasks);
 
-        return redirect() -> route('show-typology', ['id' => $id]);
+        // return redirect() -> route('show-typology', ['id' => $id]);
+        return redirect() -> route('show-typology', $typology -> id);
     }
 
 }

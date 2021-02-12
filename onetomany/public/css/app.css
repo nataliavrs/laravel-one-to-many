@@ -138,6 +138,62 @@ CONTENT
   color: #19bfe9;
 }
 
+.update-typo-content,
+.create-typo-content,
+.create-task-content,
+.update-task-content {
+  position: relative;
+}
+
+.update-typo-content .alert,
+.create-typo-content .alert,
+.create-task-content .alert,
+.update-task-content .alert {
+  background-color: #f7c2c2;
+  font-size: 1.3rem;
+  padding: 10px;
+  position: absolute;
+  border-radius: 10px;
+  color: red;
+  border-bottom: solid 2px #ee5f5f;
+  font-style: oblique;
+}
+
+.update-typo-content .alert div,
+.create-typo-content .alert div,
+.create-task-content .alert div,
+.update-task-content .alert div {
+  text-align: center;
+}
+
+.update-typo-content .alert div button,
+.create-typo-content .alert div button,
+.create-task-content .alert div button,
+.update-task-content .alert div button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: red;
+}
+
+.update-typo-content .alert div button:hover,
+.create-typo-content .alert div button:hover,
+.create-task-content .alert div button:hover,
+.update-task-content .alert div button:hover {
+  background-color: #f70909;
+  color: white;
+}
+
+.update-typo-content .alert div .error-msg,
+.create-typo-content .alert div .error-msg,
+.create-task-content .alert div .error-msg,
+.update-task-content .alert div .error-msg {
+  font-style: normal;
+  color: black;
+  font-size: 1.1rem;
+}
+
 /* 
 #############
 FOOTER

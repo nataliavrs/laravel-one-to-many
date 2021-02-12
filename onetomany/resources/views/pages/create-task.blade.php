@@ -29,5 +29,20 @@
             <input type="submit" value="Create task">
 
         </form>
+
+         {{-- ERROR MESSAGE --}}        
+         @if ($errors->any())
+            <div class="alert">    
+                @foreach ($errors->all() as $error)
+                    <div>
+                        <h3>Error</h3>
+                        <span class="error-msg">{{$error}}</span>
+                        <br>
+                        <button id="button-alert"><i class="fas fa-times"></i></button> 
+                    </div>  
+                @endforeach                    
+            </div>
+        @endif    
+
     </main>    
 @endsection

@@ -101,6 +101,43 @@ CONTENT
     }
 }
 
+// ERROR MESSAGE TYPOLOGY EDIT
+.update-typo-content,
+.create-typo-content,
+.create-task-content,
+.update-task-content {
+    position: relative;
+    .alert {
+        background-color: rgb(247, 194, 194);
+        font-size: 1.3rem;
+        padding: 10px;
+        position: absolute;
+        border-radius: 10px;
+        color: red;
+        border-bottom: solid 2px rgb(238, 95, 95);
+        font-style: oblique;
+        div {
+            text-align: center;
+            button {
+                padding: 10px;
+                border: none;
+                border-radius: 10px;
+                background-color: white;
+                color: red;
+                &:hover {
+                    background-color: rgb(247, 9, 9);
+                    color: white;
+                }
+            }
+            .error-msg {
+                font-style: normal;
+                color: black;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
 /* 
 #############
 FOOTER

@@ -1,9 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    
-    <div class="update-typo-content">
-
+    <div class="update-typo-content" id="test">
         <form action="{{route('update-typology', $typology -> id)}}" method="POST">
             @csrf
             @method('POST')
@@ -31,6 +29,18 @@
             <input type="submit" value="Edit typology">
             
         </form>
+        {{-- ERROR MESSAGE --}}        
+        @if ($errors->any())
+            <div class="alert">    
+                @foreach ($errors->all() as $error)
+                    <div>
+                        <h3>Error</h3>
+                        <span class="error-msg">{{$error}}</span>
+                        <br>
+                        <button id="button-alert"><i class="fas fa-times"></i></button> 
+                    </div>  
+                @endforeach                    
+            </div>
+        @endif                        
     </div>
-
 @endsection

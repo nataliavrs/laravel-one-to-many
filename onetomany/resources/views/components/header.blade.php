@@ -11,8 +11,6 @@
         </li>   
         <li>
             <a href="{{route('index-task')}}">Tasks</a>
-        </li>  
-            
-                
+        </li>                                        
     </ul>
 </header>

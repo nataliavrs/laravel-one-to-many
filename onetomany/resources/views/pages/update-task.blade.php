@@ -13,7 +13,7 @@
             <input name="title" type="text" value="{{ $task -> title }}">
             <br>
             <label for="priority">Priority</label>
-            <input name="priority" type="text" value="{{ $task -> priority }}">
+            <input name="priority" type="number" value="{{ $task -> priority }}">
             <br>
             <label for="description">Description</label>
             <input name="description" type="text" value="{{ $task -> description }}">
@@ -44,7 +44,26 @@
                     </div>  
                 @endforeach                    
             </div>
-        @endif    
+        @endif 
+        
+        
+        {{-- @error('priority')        
+            <div class="alert">
+                <div>
+                    <h3>Error</h3>
+                    <span class="error-msg">{{$errors -> first()}}</span>
+                </div>
+            </div>
+        @enderror
+
+        @error('description')            
+            <div class="alert">
+                <div>
+                    <h3>Error</h3>
+                    <span class="error-msg">{{$errors -> first()}}</span>
+                </div>
+            </div>
+        @enderror --}}
 
     </div>
     

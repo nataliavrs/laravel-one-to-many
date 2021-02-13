@@ -63,52 +63,37 @@ class MainController extends Controller
         return view('pages.update-task', compact(['task', 'emps']));
     }
 
-    // ##### UPDATE (EDIT) TASK USING VALIDATOR DEFAULT ERROR MESSAGES
-
-    // public function taskUpdate(Request $request, $id) {
-    //     $data = $request -> all();
-
-    //     Validator::make($data, [
-    //         'title' => 'required|min:5',
-    //         'priority' => 'required',
-    //         'description' => 'required|min:10|max:1000',
-    //     ])->validate();
-
-    //     $task = Task::findOrFail($id);
-    //     $task -> update($data);
-        
-    //     // parametri passati con array
-    //     // redirect aggiorna url 
-    //     return redirect() -> route('show-task', ['id' => $id]);
-    //     // return redirect() -> route('show-task', ['id' => $id, 'altra' => $altra]);
-
-    //     // non aggiorna URL
-    //     // return view('pages.task-show', compact(['task', 'id']));
-    // }
-
-
     // ##### UPDATE (EDIT) TASK USING VALIDATOR CUSTOM ERROR MESSAGES
+    public function taskUpdate(Request $request, $id) {
+        $data = $request -> all();
 
-    // public function taskUpdate(Request $request, $id) {
-    //     $data = $request -> all();
+        Validator::make($data, 
+        [
+            'title' => 'required|min:5',
+            'priority' => 'required|integer|between:1,5',
+            'description' => 'required|min:10|max:1000',
+        ], 
+        [
+            'title.min' => 'Minimo 5 caratteri per il titolo.',
+            'priority.required' => 'Il campo priorità è richiesto.',
+            'priority.between' => 'Il valore :input per la priorità non è fra :min - :max.',
+            'description.min' => 'Minimo 10 caratteri per la descrizione.'
+        ])
+        ->validate();
 
-    //     Validator::make($data, [
-    //         'title' => 'required|min:5',
-    //         'priority' => 'required',
-    //         'description' => 'required|min:10|max:1000',
-    //     ])->validate();
-
-    //     $task = Task::findOrFail($id);
-    //     $task -> update($data);
+        $task = Task::findOrFail($id);
+        $task -> update($data);
         
-    //     // parametri passati con array
-    //     // redirect aggiorna url 
-    //     return redirect() -> route('show-task', ['id' => $id]);
-    //     // return redirect() -> route('show-task', ['id' => $id, 'altra' => $altra]);
+        return redirect()        
+        -> route('show-task', ['id' => $id]);
+        
+        // con il redirect aggiorna - giusto
+        // parametri passati con array
+        // return redirect() -> route('show-task', ['id' => $id, 'altra' => $altra]);
 
-    //     // non aggiorna URL
-    //     // return view('pages.task-show', compact(['task', 'id']));
-    // }
+        // con il return di una view non aggiorna URL - sbagliato
+        // return view('pages.task-show', compact(['task', 'id']));
+    }
 
     // ##### LOCATIONS #####
     // locations index

@@ -42,26 +42,81 @@ CONTENT
 */
 
 .index-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 80vh;
+  position: relative;
 }
 
-.index-content h1 {
-  text-transform: uppercase;
-}
-
-.index-content ul li > a {
-  text-decoration: none;
+.navigate-card {
+  -webkit-animation-name: example, movement;
+          animation-name: example, movement;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
 }
 
-.index-content ul li > a:hover {
-  color: #19bfe9;
+/* The animation code */
+
+@-webkit-keyframes example {
+  0% {
+    background-color: #7d6fee;
+  }
+
+  25% {
+    background-color: #F20AFF;
+  }
+
+  50% {
+    background-color: #33D7DF;
+  }
+
+  100% {
+    background-color: #9A56F3;
+  }
 }
 
+@keyframes example {
+  0% {
+    background-color: #7d6fee;
+  }
+
+  25% {
+    background-color: #F20AFF;
+  }
+
+  50% {
+    background-color: #33D7DF;
+  }
+
+  100% {
+    background-color: #9A56F3;
+  }
+}
+
+@-webkit-keyframes movement {
+  0% {
+    top: 50vh;
+  }
+
+  100% {
+    top: 10vh;
+  }
+}
+
+@keyframes movement {
+  0% {
+    top: 50vh;
+  }
+
+  100% {
+    top: 10vh;
+  }
+}
+
+.index-content,
 .update-typo-content,
 .create-typo-content,
 .task-show-content,
@@ -77,9 +132,10 @@ CONTENT
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  min-height: 80vh;
 }
 
+.index-content h2 a,
 .update-typo-content h2 a,
 .create-typo-content h2 a,
 .task-show-content h2 a,
@@ -95,6 +151,7 @@ CONTENT
   color: white;
 }
 
+.index-content h2 a:hover,
 .update-typo-content h2 a:hover,
 .create-typo-content h2 a:hover,
 .task-show-content h2 a:hover,
@@ -109,6 +166,7 @@ CONTENT
   color: #19bfe9;
 }
 
+.index-content ul li > a,
 .update-typo-content ul li > a,
 .create-typo-content ul li > a,
 .task-show-content ul li > a,
@@ -124,6 +182,7 @@ CONTENT
   color: white;
 }
 
+.index-content ul li > a:hover,
 .update-typo-content ul li > a:hover,
 .create-typo-content ul li > a:hover,
 .task-show-content ul li > a:hover,

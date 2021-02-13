@@ -2,18 +2,11 @@
 
 @section('content')
 
-    <main class="index-content">
-
-        <h1>Employees</h1>
-
-        @foreach ($emps as $emp)
-            <ul>
-                <li>
-                 <a href="{{route('emp-show', $emp -> id)}}">{{$emp -> name}} {{$emp -> lastname}}</a>   
-                </li>                
-            </ul>
-        @endforeach    
-
-    </main>
+    <div class="index-content">
+        
+        <div class="navigate-card">
+            <h1><i class="fas fa-arrow-up"></i> Navigate the site with the navbar <i class="fas fa-arrow-up"></i></h1>
+        </div>
+    </div>
     
 @endsection

@@ -13,7 +13,7 @@
         @endforeach
         <br>
         <h2>
-            <a href="{{route('create-typology')}}">Create new typology</a>
+            <a href="{{route('create-typology')}}">Create new typology <i class="fas fa-plus-circle"></i></a>
         </h2> 
     </ul>
 </div>

@@ -41,30 +41,36 @@ CONTENT
 ############
 */
 
-// INDEX 
+// NAVIGATE CARD
 .index-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    h1 {        
-        // background-color: #03bdc0;
-        // border-radius: 10px;
-        // padding: 2px;
-        text-transform: uppercase;
-    }
-    ul {        
-        li > a {
-            text-decoration: none;
-            color: white;
-            &:hover {
-                color: #19bfe9;
-            }            
-        }
-    }
+    position: relative;
 }
 
+.navigate-card {    
+    animation-name: example, movement;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+/* The animation code */
+@keyframes example {
+    0%   {background-color: rgb(125, 111, 238);}
+    25%  {background-color: #F20AFF;}
+    50%  {background-color:#33D7DF;}
+    100% {background-color: #9A56F3;}
+}
+
+@keyframes movement {
+    0% {top: 50vh;}
+    100% {top: 10vh;}
+}
+
+// MAIN STYLING
+.index-content,
 .update-typo-content, 
 .create-typo-content, 
 .task-show-content, 
@@ -80,7 +86,7 @@ CONTENT
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80vh;
+    min-height: 80vh;
     h2 {
         a {
             text-decoration: none;

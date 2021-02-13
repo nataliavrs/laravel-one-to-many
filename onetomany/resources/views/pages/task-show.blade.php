@@ -14,7 +14,7 @@
             <li>Date of Birth: {{$task -> employee -> dateOfBirth}}</li>
         </ul>
 
-        <h2><a href="{{route('update-task', $task -> id)}}">Edit Task</a></h2>
+        <h2><a href="{{route('update-task', $task -> id)}}">Edit Task <i class="far fa-edit"></i></a></h2>
 
     </div>
 

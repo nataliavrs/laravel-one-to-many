@@ -13,8 +13,14 @@ class MainController extends Controller
 {   
     // page - index
     public function index(){
+        return view('pages.index');
+    }
+
+    // ##### EMPLOYEES #####
+    // page - employee index
+    public function indexEmplo() {
         $emps = Employee::all();
-        return view('pages.index', compact(['emps']));
+        return view('pages.employee-index', compact(['emps']));
     }
     // page - employee info
     public function empShow($id){

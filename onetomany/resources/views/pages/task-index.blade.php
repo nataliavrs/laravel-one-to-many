@@ -15,7 +15,7 @@
         @endforeach    
         <br>
         <h2>
-            <a href="{{route('create-task')}}">Create new task</a>
+            <a href="{{route('create-task')}}">Create new task <i class="fas fa-plus-circle"></i></a>
         </h2> 
 
     </main>

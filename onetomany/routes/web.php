@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 // page - index
 Route::get('/', 'MainController@index')
     -> name('index');
+
+// employee index    
+Route::get('/employees', 'MainController@indexEmplo') 
+    -> name('emp-index');
 // page - employee info
 Route::get('/employee/{id}', 'MainController@empShow')
     -> name('emp-show');

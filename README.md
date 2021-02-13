@@ -1,15 +1,17 @@
-### Website to interact with a relational DB. 
+## Website to interact with a relational DB. 
 
-## Technologies:
+### Technologies:
 
-- Laravel 7.x.
-- MySQL.
-- Eloquent.
-- Blade.
-- Sass.
+- Laravel 7.x
+- MySQL
+- Eloquent
+- Blade
+- Sass
 
-## Features: 
+### Features: 
 
-- CRUD (create and update).
-- Validations with default and custom messages.
+- One to Many relationship
+- Many to Many relationship
+- CRUD (create and update)
+- Validations with default and custom messages
 
